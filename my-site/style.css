@@ -4,39 +4,56 @@
 
 body {
   margin: 0;
+  background: #f8f1e3;
   font-family: system-ui, sans-serif;
 }
 
 .topnav {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   height: 60px;
   padding: 0 2rem;
+  background: #6f7b7a;
   border-bottom: 1px solid #e5e5e5;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
 }
 
 .brand {
   font-weight: 700;
   font-size: 1.05rem;
-  color: #1f2933;
+  color: #f8f1e3;
   text-decoration: none;
+  display: inline-block;
+  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
 }
 
 .navlinks {
   margin-left: auto;
   display: flex;
-  gap: 1.75rem;
+  gap: 1.15rem;
 }
 
 .navlinks a {
-  color: #52606d;
+  color: #f8f1e3;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  display: inline-block;
+  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
 }
 
 .navlinks a:hover,
 .brand:hover {
-  color: #4a90d9;
+  color: #1f2a29;
+  text-shadow: 0 0 0.4px currentColor;
+  transform: scale(1.08);
+}
+
+.navlinks a.active {
+  color: #1f2933;
+  font-weight: 600;
 }
 
 .page {
@@ -47,13 +64,14 @@ body {
 .sidebar {
   width: 300px;
   flex-shrink: 0;
-  background: #96c8fa;
+  background: #d6d2c3;
   padding: 2.5rem 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 0.35rem;
+  animation: fadeIn 0.8s ease-in-out;
 }
 
 .avatar {
@@ -61,42 +79,75 @@ body {
   height: 170px;
   border-radius: 50%;
   object-fit: cover;
-  border: 5px solid #ffffff;
+  border: 5px solid #f8f1e3;
 }
 
 .name {
   font-size: 1.6rem;
   margin: 1.25rem 0 0.25rem;
+  color: #26362f;
 }
 
 .tagline,
 .affiliation {
   margin: 0;
-  color: #2b3a4a;
+  color: #4a4f57;
 }
 
 .icons {
   display: flex;
-  gap: 1rem;
+  gap: 0.9rem;
   margin-top: 1.5rem;
 }
 
 .icons a {
-  color: #2b3a4a;
-  font-size: 1.35rem;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #3e4f56;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
   text-decoration: none;
+  border: 3px solid transparent;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
 }
 
 .icons a:hover {
-  color: #ffffff;
+  background: #1f2a29;
+  transform: scale(1.08);
+}
+
+.icons a.textbtn {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.icons + .icons {
+  margin-top: 0.85rem;
 }
 
 .content {
   flex: 1;
   padding: 3.5rem;
-  max-width: 800px;
   color: #333;
   line-height: 1.65;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .content h1 {
@@ -112,5 +163,53 @@ body {
 }
 
 .content a {
-  color: #4a90d9;
+  color: inherit;
+  font-weight: 700;
+}
+
+.content p.intro {
+  font-size: 0.85rem;
+}
+
+.news-list {
+  font-size: 0.85rem;
+}
+
+.entry {
+  display: flex;
+  gap: 1.75rem;
+  align-items: flex-start;
+  margin-bottom: 2.5rem;
+}
+
+.entry-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.entry-image {
+  width: 180px;
+  flex-shrink: 0;
+  border-radius: 6px;
+}
+
+.entry-title {
+  font-size: 1.1rem;
+  margin: 0 0 0.15rem;
+  color: #1f2933;
+}
+
+.entry-meta {
+  margin: 0 0 0.65rem;
+  font-size: 0.9rem;
+  color: #7b8794;
+}
+
+.entry ul {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+
+.entry li {
+  margin-bottom: 0.3rem;
 }

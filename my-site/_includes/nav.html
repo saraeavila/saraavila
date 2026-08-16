@@ -1,8 +1,9 @@
 <nav class="topnav">
   <a class="brand" href="{{ '/' | relative_url }}">Sara Avila</a>
   <div class="navlinks">
-    <a href="{{ '/publications.html' | relative_url }}">Publications</a>
-    <a href="{{ '/projects.html' | relative_url }}">Projects</a>
-    <a href="{{ '/cv.html' | relative_url }}">CV</a>
+    {% for item in site.data.navigation %}
+      <a href="{{ item.url | relative_url }}"
+         class="{% if page.url == item.url %}active{% endif %}">{{ item.title }}</a>
+    {% endfor %}
   </div>
 </nav>
