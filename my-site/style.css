@@ -178,7 +178,7 @@ body {
 .entry {
   display: flex;
   gap: 1.75rem;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 1.0rem;
   margin-left: 1.5rem;
 }
