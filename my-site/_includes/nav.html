@@ -1,5 +1,8 @@
 <nav class="topnav">
   <a class="brand" href="{{ '/' | relative_url }}">Sara Avila</a>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <i class="fa-solid fa-bars"></i>
+  </button>
   <div class="navlinks">
     {% for item in site.data.navigation %}
       <a href="{{ item.url | relative_url }}"
@@ -7,3 +10,23 @@
     {% endfor %}
   </div>
 </nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var toggle = document.querySelector('.nav-toggle');
+    var links = document.querySelector('.navlinks');
+    if (!toggle || !links) return;
+
+    toggle.addEventListener('click', function () {
+      var isOpen = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    links.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  });
+</script>

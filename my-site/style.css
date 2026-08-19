@@ -56,6 +56,17 @@ body {
   font-weight: 600;
 }
 
+.nav-toggle {
+  display: none;
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: #f8f1e3;
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
 .page {
   display: flex;
   min-height: calc(100vh - 60px);
@@ -246,4 +257,37 @@ body {
 .entry li {
   margin-bottom: 0.3rem;
   font-size: 0.85rem;
+}
+
+@media (max-width: 700px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .navlinks {
+    margin-left: 0;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: #6f7b7a;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+  }
+
+  .navlinks.open {
+    max-height: 400px;
+  }
+
+  .navlinks a {
+    padding: 0.85rem 2rem;
+    width: 100%;
+  }
+
+  .sidebar {
+    display: none;
+  }
 }
