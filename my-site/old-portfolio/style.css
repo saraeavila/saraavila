@@ -1,0 +1,380 @@
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+} 
+nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(164, 192, 208, 0.85);
+    padding: 1rem 3rem;
+    border-radius: 300px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    z-index: 1000;
+}  
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin: 0;
+    padding: 0;
+}
+nav a {
+    text-decoration: none;
+    color: #f8f1e3;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
+  }
+
+    nav a:hover {
+        color: #333;
+    }
+
+  section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+    text-align: center;
+  }
+  
+  #about { 
+    background: url('images/ocean.jpg');
+    background-size: cover;             
+    background-position: center;       
+    background-repeat: no-repeat;       
+    min-height: 100vh;                 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;                 
+    text-shadow: 0 2px 5px rgba(0,0,0,0.6);
+    color: #f8f1e3;
+   }
+   
+#about .intro {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    animation: fadeIn 1.2s ease-in-out;
+  }
+  .page {
+    opacity: 0;                     
+    transform: scale(0.9);
+    transition: all 0.8s ease-in-out;
+  }
+
+  .page.visible {
+    opacity: 1;                     
+    transform: scale(1);
+  }
+  
+  .header1 {
+    font-size: 2.2rem;   
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+  
+  #about p {
+    font-size: 1.2rem;   
+    margin: 0;
+  }
+  
+
+  #experience {
+    background: #d6d2c3;
+    min-height: 90vh;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  #experience h2 {
+    color: #26362f;  
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .experience-item {
+    background: #f8f1e3;
+    border-radius: 12px;
+    padding: 2rem 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  .experience-item img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 1rem;
+    transition: transform 0.3s;
+  }
+  
+  .experience-item img:hover {
+    transform: scale(1.1);
+  }
+  
+  .experience-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .experience-item p {
+    font-size: 0.8rem;
+    margin: 0.25rem 0;
+  }
+
+  .experience-icon {
+    font-size: 3rem;  
+    color: #364b49;    
+    transition: transform 0.3s, color 0.3s;
+  }
+  
+  .experience-icon:hover {
+    color: #1f2a29;    
+    transform: scale(1.1); 
+  }
+  #research { 
+    background: #3e4f56; 
+    min-height: 90vh;
+    padding: 4rem 2rem;
+}
+#research h2 {
+  color: #d6d2c3;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.research-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.research-item {
+  display: grid;
+  grid-template-columns: 100px 1fr 220px;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: #f8f1e3;
+  border-radius: 16px; 
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.research-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.research-item .icon {
+  font-size: 3.5rem;
+  color: #2c3e50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.research-item .content {
+  text-align: left;
+}
+
+.research-item .content h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #111;
+}
+
+.research-item .content .subtitle {
+  margin: 0.25rem 0 0.75rem;
+  font-size: 0.95rem;
+  font-weight: normal;
+  color: #666;
+}
+
+.research-item .content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.research-item .image img {
+  max-width: 60%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+#hobbies { 
+    background: #6f7b7a; 
+    min-height: 90vh;
+}
+.hobbies-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    background: #f8f1e3;  
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    max-width: 1100px;
+    margin: 0 auto;
+    animation: fadeIn 1.2s ease-in-out;
+}
+  .hobbies-text {
+    justify-content: center;
+    flex: 1 1 450px;
+  }
+  .hobbies-text h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .hobbies-text h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #555;
+  }
+  
+  .hobbies-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  .hobbies-image {
+    flex: 1 1 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .hobbies-image img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    object-fit: cover;
+  }
+  .strava-bubble {
+    display: inline-block;
+    padding: .9rem 1.2rem;
+    background: #304541;       
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 9999px;       
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 2rem;
+  }
+  
+  .strava-bubble:hover {
+    background: #d84315;         
+    transform: scale(1.05);
+  }
+  #hobbies h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #2d2d2d;
+  }
+  
+  #hobbies h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: #555;
+  }
+  
+  #hobbies p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+    max-width: 600px;
+  }
+#projects {
+  background: #f8f1e3;   
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.coming-soon {
+  background: #d6d2c3;
+  padding: 3rem 4rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.coming-soon h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #26362f;  
+}
+
+.coming-soon p {
+  font-size: 1.2rem;
+  color: #26362f;  
+}
+#contact {
+    min-height: 50vh;
+    background: url('images/canada.jpg');
+    background-size: cover;
+}
+.contact-icons {
+    display: flex;
+    justify-content: center;   
+    gap: 2rem;                 
+    margin-top: 1rem;
+}
+.contact-icon {
+    font-size: 3rem;  
+    color: #201c19;    
+    transition: transform 0.3s, color 0.3s;
+}
+.contact-icon:hover {
+    color: #201c19;    
+    transform: scale(1.1); 
+}
+@media (max-width: 900px) {
+  .hobbies-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hobbies-text, .hobbies-image {
+    flex: 1 1 100%;
+  }
+  .hobbies-image img {
+    max-width: 90%;
+  }
+}
+.hobbies-text {
+  text-align: center;       /* centers all inner text */
+  max-width: 700px;         /* keeps it nicely contained */
+}
+  
